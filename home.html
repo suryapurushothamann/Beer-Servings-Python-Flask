@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Beer Servings Prediction</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <header class="header">
+        <h1>Alcohol Consumption Prediction</h1>
+        <p>Predict total litres of pure alcohol using machine learning</p>
+    </header>
+
+    <main>
+
+        <!-- Prediction Form -->
+        <section class="prediction-section">
+            <h2>Enter Consumption Details</h2>
+
+            <form action="/predict" method="POST">
+
+                <label for="country">Country</label>
+                <select id="country" name="country" required>
+                    <option value="">Select Country</option>
+
+                    {% for country in countries %}
+                    <option value="{{ country }}">
+                        {{ country }}
+                    </option>
+                    {% endfor %}
+                </select>
+
+                <label for="continent">Continent</label>
+                <select id="continent" name="continent" required>
+                    <option value="">Select Continent</option>
+
+                    {% for continent in continents %}
+                    <option value="{{ continent }}">
+                        {{ continent }}
+                    </option>
+                    {% endfor %}
+                </select>
+
+                <label for="beer_servings">Beer Servings</label>
+                <input
+                    type="number"
+                    id="beer_servings"
+                    name="beer_servings"
+                    min="0"
+                    step="any"
+                    required
+                >
+
+                <label for="spirit_servings">Spirit Servings</label>
+                <input
+                    type="number"
+                    id="spirit_servings"
+                    name="spirit_servings"
+                    min="0"
+                    step="any"
+                    required
+                >
+
+                <label for="wine_servings">Wine Servings</label>
+                <input
+                    type="number"
+                    id="wine_servings"
+                    name="wine_servings"
+                    min="0"
+                    step="any"
+                    required
+                >
+
+                <button type="submit">Predict</button>
+
+            </form>
+        </section>
+
+        <!-- Alcohol Consumption Infographics -->
+        <section class="infographics">
+
+            <h2>Explore Global Alcohol Consumption</h2>
+
+            <p>
+                Explore beverage preferences and alcohol consumption
+                patterns across countries.
+            </p>
+
+            <div class="image-grid">
+
+                <div class="image-card">
+                    <h3>Alcohol Consumption Comparison</h3>
+
+                    <img
+                        src="{{ url_for('static', filename='images/1.png') }}"
+                        alt="Comparison of beer, wine and spirits consumption"
+                    >
+                </div>
+
+                <div class="image-card">
+                    <h3>Favorite Alcoholic Drink by Country</h3>
+
+                    <img
+                        src="{{ url_for('static', filename='images/2.png') }}"
+                        alt="Map of favorite alcoholic drinks by country"
+                    >
+                </div>
+
+                <div class="image-card">
+                    <h3>Alcohol Consumption Per Person</h3>
+
+                    <img
+                        src="{{ url_for('static', filename='images/3.png') }}"
+                        alt="Map of alcohol consumption per person"
+                    >
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Beer Servings Prediction | Flask and Machine Learning</p>
+    </footer>
+
+</body>
+</html>

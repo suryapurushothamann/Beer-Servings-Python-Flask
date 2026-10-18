@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <header class="header">
+        <h1>Beer Servings Prediction</h1>
+        <p>Your machine learning prediction result</p>
+    </header>
+
+    <main>
+        <section class="prediction-section result">
+            <h2>Prediction Result</h2>
+
+            <p>{{ prediction_text }}</p>
+
+            {% if prediction is not none %}
+                <h3>{{ prediction }} litres</h3>
+                <p>Predicted total litres of pure alcohol.</p>
+            {% endif %}
+
+            <a href="/" class="back-button">
+                Back to Prediction
+            </a>
+        </section>
+    </main>
+
+    <footer>
+        <p>Beer Servings Prediction | Flask and Machine Learning</p>
+    </footer>
+
+</body>
+</html>

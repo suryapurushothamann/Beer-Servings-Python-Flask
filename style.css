@@ -1,0 +1,64 @@
+
+/* Prediction form layout */
+.prediction-section {
+    max-width: 650px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.prediction-section h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #243b64;
+}
+
+.prediction-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.prediction-section form label {
+    display: block;
+    margin-top: 8px;
+    font-weight: 600;
+}
+
+.prediction-section form input,
+.prediction-section form select {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 15px;
+    background-color: #ffffff;
+}
+
+.prediction-section form button {
+    width: 100%;
+    margin-top: 15px;
+    padding: 13px;
+    background-color: #243b64;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.prediction-section form button:hover {
+    background-color: #365887;
+}
+
+/* Responsive layout */
+@media (max-width: 700px) {
+    .prediction-section {
+        margin: 20px 12px;
+        padding: 20px;
+    }
+}
